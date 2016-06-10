@@ -1,0 +1,2 @@
+#main.sh用于定时,规范文件大小等，运用while true 可能会造成资源浪费
+#sysinfo_recorder.sh用于搜寻CPU信息
