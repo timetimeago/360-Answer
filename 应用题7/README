@@ -1,0 +1,5 @@
+使用方式
+server.py 运行在被控制端
+agent.py 运行在控制端
+
+通过socket通信，被控制端采用select模块。接受控制端发来的命令
