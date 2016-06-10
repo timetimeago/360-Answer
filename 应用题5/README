@@ -1,3 +1,6 @@
+两个文件都要放入远端服务器。
 daemon.sh 文件为socks_proxy.sh文件的守护进程
-将daemon.sh其加入开机启动，
-当socks_proxy.sh 断线，进程崩溃则会自动重新建立连接
+socks_proxy.sh 实现代理功能
+将daemon.sh启动，
+socks_proxy.sh 将自动启动，
+并保证了远端服务器 断线，进程崩溃会自动重新建立连接
