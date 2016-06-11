@@ -16,9 +16,9 @@ outputs = [ ]
 message_queues = {}
 while inputs:
     #通过select 函数监测活动链接
-    readable,writable,exceptional = select.select(inputs, outputs, inputs)
+    Rec,Send,error = select.select(inputs, outputs, inputs)
     #逐个获取活动链接的Socket对象
-    for s in readable:
+    for s in Rec:
         #监测是否为新链接
         if s is server:
             connection, client_address = s.accept()
@@ -38,7 +38,7 @@ while inputs:
                 s.close()
                 del message_queues[s]
     #开始发送
-    for s in writable:
+    for s in Send:
         try:
             command = message_queues[s].get_nowait()
         except Queue.Empty:
@@ -47,7 +47,7 @@ while inputs:
             next_msg=commands.getoutput(command)
             s.send(next_msg)
     #错误链接处理
-    for s in exceptional:
+    for s in error:
         inputs.remove(s)
         if s in outputs:
             outputs.remove(s)
