@@ -1,0 +1,5 @@
+本题采用方法与应用题7方法相似
+都是用Python socket模块及select模块
+进行解决。
+server运行在服务端，client运行在客户端
+定义内容在server内定义
