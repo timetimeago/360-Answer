@@ -12,4 +12,3 @@ L = len(Net_Name)
 for i in range(L):
     dict1[Net_Name[i]] = Ip_Net[i]
 print dict1
-
