@@ -2,7 +2,7 @@
 #total CPU numbers CPu总数
 Cpu_Num=`cat /proc/cpuinfo|grep -w processor|wc -l`
 #All CPU working status  各个Cpu的利用率
-Tota="$(sar -P ALL 1|awk '{if ($1 == "Average:") print $2" "$3" "$4" "$5" "$6" "$7" "$8}')"
+Tota="$(sar -P ALL 1 1|awk '{if ($1 == "Average:") print $2" "$3" "$4" "$5" "$6" "$7" "$8}')"
 #Average Cpu utilization  cpu的平均利用率
 Cpu_uti=$(echo -e "$Tota"|grep all|awk '{print $3}')
 #Uptime  负载
