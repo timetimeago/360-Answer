@@ -2,5 +2,5 @@
 server.py 运行在被控制端
 agent.py 运行在控制端
 
-通过socket通信，被控制端采用select模块,能不阻塞的接受控制端发来的命令。
+通过socket通信，被控制端采用select模块,能不阻塞的接受控制端发来的命令,服务端接受到命令后运用Python commands模块执行命令。
 单进程异步处理模式
