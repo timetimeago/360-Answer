@@ -1,3 +1,0 @@
-daemon.sh 文件为socks_proxy.sh文件的守护进程
-将daemon.sh其加入开机启动，
-当socks_proxy.sh 断线，进程崩溃则会自动重新建立连接
